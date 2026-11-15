@@ -101,3 +101,2425 @@ img { max-width: 100%; }
   text-transform: uppercase;
   font-weight: 800;
 }
+.muted { color: var(--muted); }
+
+button { cursor: pointer; }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 11px 19px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface2);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn.primary {
+  background: var(--accent);
+  color: #23130b;
+  border-color: var(--accent);
+}
+
+.btn.ghost { background: transparent; }
+
+header {
+  min-height: min(780px, 94svh);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding-block: 90px 65px;
+  background:
+    radial-gradient(ellipse at 50% 115%, #263f6a 0, transparent 48%),
+    radial-gradient(ellipse at 85% 10%, #54365a 0, transparent 38%),
+    transparent;
+}
+
+#stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-content { max-width: 900px; }
+
+.hero h1 {
+  max-width: 850px;
+  margin: 18px 0;
+  font: 400 clamp(3rem, 8.4vw, 7.3rem)/.99 Georgia, "Times New Roman", serif;
+  letter-spacing: -.045em;
+}
+
+.hero h1 span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.hero p {
+  max-width: 710px;
+  color: #c2cee3;
+  font-size: clamp(1.05rem, 2vw, 1.27rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero-note {
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+header .planet {
+  position: absolute;
+  right: -90px;
+  bottom: -140px;
+  width: min(43vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 28% 25%, #7b91b8, #334b77 35%, #14223f 66%, #080d1c 76%);
+  box-shadow: -25px -25px 100px #627dbe22, inset -35px -20px 80px #0008;
+  z-index: -1;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  overflow-x: auto;
+  padding: 10px max(16px, calc((100vw - var(--max)) / 2));
+  background: #080d1cf0;
+  backdrop-filter: blur(16px);
+  border-block: 1px solid var(--line);
+  scrollbar-width: thin;
+}
+
+nav a, nav button {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  border-radius: 99px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: .88rem;
+}
+
+nav a:hover, nav button:hover, nav a.active {
+  background: var(--surface2);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+nav .nav-spacer { flex: 1; min-width: 10px; }
+
+nav .score-nav {
+  white-space: nowrap;
+  font-weight: 800;
+  color: var(--accent);
+  position: sticky;
+  right: 0;
+  padding: 9px 0 9px 12px;
+  background: #080d1c;
+}
+
+section.page-section { padding-block: 76px; }
+
+.section-heading {
+  max-width: 790px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font: 400 clamp(2rem, 5vw, 3.5rem)/1.1 Georgia, serif;
+  letter-spacing: -.025em;
+  margin: 12px 0;
+}
+
+.section-heading p { color: var(--muted); }
+
+.destinations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.destination {
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #1b2a45, #10182b);
+  transition: transform .25s, border-color .25s;
+}
+
+.destination:hover, .destination.selected {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+}
+
+.destination .emoji { font-size: 3rem; display: block; }
+
+.destination h3 {
+  font: 400 1.65rem Georgia, serif;
+  margin: 20px 0 8px;
+}
+
+.destination p { color: var(--muted); font-size: .9rem; margin: 0; }
+
+.destination .count {
+  display: inline-block;
+  margin-top: 17px;
+  color: var(--cyan);
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 20px;
+}
+
+.filter {
+  padding: 9px 15px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.filter.active {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: #071522;
+  font-weight: 800;
+}
+
+.search {
+  width: 100%;
+  max-width: 480px;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.artifact-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform .2s, border-color .2s;
+}
+
+.artifact-card:hover {
+  transform: translateY(-3px);
+  border-color: #5d789c;
+}
+
+.card-art {
+  height: 185px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 120%, var(--glow, #243d6a), transparent 65%),
+    linear-gradient(145deg, #17243c, #0b1222);
+}
+
+.card-art .art-emoji {
+  font-size: 5.2rem;
+  filter: drop-shadow(0 10px 16px #0008);
+}
+
+.card-art .art-year {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  padding: 5px 10px;
+  border-radius: 99px;
+  background: #050a16b8;
+  color: #d7e3f7;
+  font-size: .75rem;
+}
+
+.card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+
+.card-body h3 {
+  margin: 9px 0 7px;
+  font: 400 1.65rem/1.15 Georgia, serif;
+}
+
+.card-body p { color: var(--muted); font-size: .92rem; }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  font-size: .72rem;
+  font-weight: 800;
+  border-radius: 99px;
+  padding: 5px 9px;
+  background: #26334a;
+  color: var(--yellow);
+}
+
+.status.active { color: var(--green); background: #15372c; }
+.status.silent { color: #c5cde0; background: #29334a; }
+.status.passive { color: var(--cyan); background: #143447; }
+.status.ended { color: var(--yellow); background: #44361c; }
+
+.card-body .btn { margin-top: auto; width: 100%; }
+
+.tagline {
+  color: var(--cyan);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.timeline {
+  position: relative;
+  margin: 40px 0 0;
+  padding: 0 0 0 32px;
+  border-left: 2px solid var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 35px 20px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  left: -40px;
+  top: 9px;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px #ffab701c;
+}
+
+.timeline-item time {
+  color: var(--cyan);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.timeline-item h3 { margin: 5px 0; font: 400 1.35rem Georgia, serif; }
+.timeline-item p { margin: 0; color: var(--muted); }
+
+.story {
+  padding-block: 50px;
+  scroll-margin-top: 85px;
+}
+
+.story-panel {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+}
+
+.story-head {
+  padding: clamp(22px, 5vw, 46px);
+  background:
+    radial-gradient(ellipse at 95% 0%, #30436c77, transparent 45%),
+    #10182a;
+  border-bottom: 1px solid var(--line);
+}
+
+.story-head h2 {
+  font: 400 clamp(2rem, 5vw, 3.8rem)/1.1 Georgia, serif;
+  letter-spacing: -.03em;
+  margin: 13px 0;
+}
+
+.story-meta {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: .83rem;
+}
+
+.story-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+}
+
+.story-visual {
+  padding: 25px;
+  border-right: 1px solid var(--line);
+}
+
+.story-image {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 50% 100%, var(--glow, #243d6a), transparent 75%),
+    linear-gradient(145deg, #1c2a43, #080e1c);
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.story-image .placeholder {
+  font-size: clamp(5rem, 12vw, 9rem);
+  filter: drop-shadow(0 12px 15px #0009);
+}
+
+.story-image .image-label {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px 10px;
+  background: #060a15d9;
+  border-radius: 8px;
+  font-size: .72rem;
+  color: white;
+}
+
+.story-content { padding: clamp(22px, 4vw, 42px); min-width: 0; }
+
+.story-content h3 {
+  font-size: .8rem;
+  color: var(--accent);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin: 26px 0 7px;
+}
+
+.story-content h3:first-child { margin-top: 0; }
+
+.story-voice {
+  font: 1.2rem/1.8 Georgia, serif;
+  color: #e6edf9;
+  border-left: 3px solid var(--accent);
+  padding-left: 18px;
+}
+
+.story-content p { color: #c3cfe2; }
+
+.story-content ul { padding-left: 22px; color: #c3cfe2; }
+.story-content li { margin-bottom: 10px; }
+
+.discovery {
+  padding: 18px;
+  border: 1px solid #34566a;
+  border-radius: 15px;
+  background: #122738;
+  margin-top: 15px;
+}
+
+.discovery strong { color: var(--cyan); display: block; margin-bottom: 6px; }
+.discovery p { margin: 0; font-size: .92rem; }
+
+.fact {
+  padding: 16px;
+  background: #332b1d;
+  border: 1px solid #69502a;
+  border-radius: 14px;
+  margin-top: 20px;
+}
+
+.fact strong { color: var(--yellow); }
+.fact p { margin-bottom: 0; }
+
+.hardware-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hardware-item {
+  padding: 13px;
+  background: var(--surface2);
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.hardware-item small { display: block; color: var(--muted); font-size: .74rem; }
+.hardware-item strong { display: block; font-size: .91rem; overflow-wrap: anywhere; }
+
+.story-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 25px;
+}
+
+.story-actions .btn { font-size: .85rem; }
+
+.quiz {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #0d1424;
+}
+
+.quiz .question-number {
+  font-size: .74rem;
+  text-transform: uppercase;
+  color: var(--cyan);
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.quiz h3 {
+  margin: 9px 0 15px;
+  color: var(--text);
+  font: 400 1.35rem/1.35 Georgia, serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.quiz-options { display: grid; gap: 8px; }
+
+.quiz-options button {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.quiz-options button:hover:not(:disabled) { border-color: var(--cyan); }
+
+.quiz-options button.correct {
+  border-color: var(--green);
+  background: #143326;
+}
+
+.quiz-options button.incorrect {
+  border-color: var(--red);
+  background: #3c2028;
+}
+
+.quiz-feedback { margin-top: 13px; font-size: .9rem; min-height: 1.5em; }
+.quiz-feedback.good { color: var(--green); }
+.quiz-feedback.bad { color: var(--yellow); }
+
+.level-control {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.level-control button {
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.level-control button.active {
+  color: #071522;
+  background: var(--cyan);
+  border-color: var(--cyan);
+  font-weight: 800;
+}
+
+.report {
+  padding: clamp(25px, 5vw, 55px);
+  border: 1px solid #4b5876;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 90% 0%, #344e7c66, transparent 55%),
+    var(--surface);
+  text-align: center;
+}
+
+.report-score {
+  font: 400 clamp(4rem, 10vw, 7rem)/1 Georgia, serif;
+  color: var(--accent);
+  margin: 25px 0 12px;
+}
+
+.report h2 { font: 400 clamp(2rem, 5vw, 3.5rem) Georgia, serif; }
+
+.report p { color: var(--muted); }
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.report-item {
+  padding: 16px;
+  background: #0b1222;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.report-item strong { display: block; color: var(--cyan); }
+.report-item span { color: var(--muted); font-size: .84rem; }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 45px 0 35px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+footer h2 { color: var(--text); font: 400 1.6rem Georgia, serif; }
+
+.sources { padding-left: 20px; }
+.sources li { margin: 8px 0; }
+.sources a { overflow-wrap: anywhere; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.empty-state {
+  padding: 35px;
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+  color: var(--muted);
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.toast {
+  position: fixed;
+  z-index: 150;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  padding: 12px 18px;
+  max-width: calc(100% - 32px);
+  background: #e8f5ff;
+  color: #10213a;
+  border-radius: 12px;
+  box-shadow: 0 8px 35px #0007;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s;
+}
+
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+.hidden { display: none !important; }
+
+@media (max-width: 900px) {
+  .artifact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .story-layout { grid-template-columns: 1fr; }
+  .story-visual { border-right: 0; border-bottom: 1px solid var(--line); }
+  .story-image, .story-image img { min-height: 340px; }
+  .destinations { grid-template-columns: 1fr; }
+  .destination { min-height: 190px; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 15px; }
+  header { min-height: 740px; min-height: 85svh; }
+  header .planet { width: 75vw; right: -100px; bottom: -100px; }
+  .hero h1 { font-size: clamp(2.9rem, 13vw, 4.4rem); }
+  section.page-section { padding-block: 50px; }
+  .artifact-grid { grid-template-columns: 1fr; }
+  .card-art { height: 220px; }
+  .story { padding-block: 25px; }
+  .story-head { padding: 24px 20px; }
+  .story-content, .story-visual { padding: 20px; }
+  .story-image, .story-image img { min-height: 260px; }
+  .hardware-box, .report-grid, .footer-grid { grid-template-columns: 1fr; }
+  .quiz { padding: 17px; }
+  .story-voice { font-size: 1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* ===== Opening animation ===== */
+body.intro-lock{overflow:hidden}
+#intro{position:fixed;inset:0;z-index:300;background:#060a18;color:#e8ecf7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .7s,transform .7s}
+#intro.out{opacity:0;transform:scale(1.15);pointer-events:none}
+#introCanvas{position:absolute;inset:0;width:100%;height:100%}
+#introTx{position:relative;z-index:2;font:1rem/1.9 ui-monospace,Menlo,Consolas,monospace;color:var(--cyan);min-height:8em;text-align:left}
+#introTx.hid{display:none}
+#introTx i{display:inline-block;width:.6em;height:1.1em;background:var(--cyan);vertical-align:-2px;animation:intro-blink .8s steps(1) infinite}
+@keyframes intro-blink{50%{opacity:0}}
+.intro-ring{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;border:2px solid var(--cyan);border-radius:50%;opacity:0;animation:intro-ping 3s ease-out infinite}
+.intro-ring.r2{animation-delay:1s}.intro-ring.r3{animation-delay:2s}
+#intro.done .intro-ring{display:none}
+@keyframes intro-ping{0%{transform:scale(.2);opacity:.7}100%{transform:scale(22);opacity:0}}
+#introTitle{position:relative;z-index:2;font:400 clamp(2.4rem,8vw,5rem)/1.05 Georgia,serif;max-width:900px;opacity:0}
+#introTitle small{display:block;font:italic 1rem/1.5 system-ui,sans-serif;opacity:.8;margin-top:16px;letter-spacing:0}
+#introTitle.show{animation:intro-title 1.6s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes intro-title{from{opacity:0;letter-spacing:.5em;filter:blur(8px)}to{opacity:1;letter-spacing:0;filter:none}}
+#introOpen{position:relative;z-index:2;margin-top:28px;background:var(--accent);color:#23130b;border:0;border-radius:999px;padding:14px 28px;font-weight:800;font-size:1.05rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .6s}
+#introOpen.show{opacity:1;pointer-events:auto;animation:intro-pulse 1.8s infinite}
+@keyframes intro-pulse{50%{box-shadow:0 0 0 14px #ffab7033}}
+.intro-skip{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;z-index:3;background:#ffffff24;color:#fff;border:0;border-radius:999px;padding:9px 15px;font-size:.85rem;cursor:pointer}
+#intro.flash::after{content:"";position:absolute;inset:0;background:#fff;opacity:0;animation:intro-flash .7s ease-out;pointer-events:none}
+@keyframes intro-flash{0%{opacity:.9}100%{opacity:0}}
+/* ===== Perfect-score celebration ===== */
+body.cel-lock{overflow:hidden}
+#celebrate{position:fixed;inset:0;z-index:250;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(4,7,18,.84);backdrop-filter:blur(6px);opacity:0;transition:opacity .4s}
+#celebrate.show{opacity:1}
+#celebrateConfetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.cel-card{position:relative;z-index:2;width:min(560px,100%);text-align:center;padding:38px 26px 30px;border:1px solid #4b5876;border-radius:28px;background:radial-gradient(ellipse at 50% 0%,#3b4f80aa,transparent 62%),var(--surface);overflow:hidden;transform:scale(.8) translateY(30px);transition:transform .6s cubic-bezier(.2,1.2,.3,1)}
+#celebrate.show .cel-card{transform:none}
+.cel-trophy{display:inline-block;font-size:5.5rem;line-height:1;filter:drop-shadow(0 10px 20px #0009);animation:cel-pop 1s cubic-bezier(.2,1.4,.4,1) .3s both,cel-float 3s ease-in-out 1.3s infinite}
+@keyframes cel-pop{0%{transform:scale(0) rotate(-25deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes cel-float{50%{transform:translateY(-10px) rotate(4deg)}}
+.cel-card h2{font:400 clamp(2rem,6vw,3rem)/1.1 Georgia,serif;margin:14px 0 6px;color:var(--accent)}
+.cel-score{font:400 1.25rem Georgia,serif;color:var(--cyan);letter-spacing:.02em}
+.cel-card p{color:#c3cfe2;margin:12px 0 24px}
+.cel-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.cel-rocket{position:absolute;z-index:1;left:-60px;bottom:-60px;font-size:2.6rem;animation:cel-fly 3.2s ease-in .5s both;pointer-events:none}
+@keyframes cel-fly{to{transform:translate(calc(100vw + 160px),calc(-100vh - 160px))}}
+.cel-star{position:absolute;color:var(--yellow);animation:cel-twinkle 1.8s ease-in-out infinite;pointer-events:none}
+@keyframes cel-twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+</style>
+</head>
+
+<body>
+<div id="intro" role="dialog" aria-modal="true" aria-label="Welcome to Echoes of Exploration">
+  <canvas id="introCanvas" aria-hidden="true"></canvas>
+  <div class="intro-ring"></div><div class="intro-ring r2"></div><div class="intro-ring r3"></div>
+  <div id="introTx" aria-hidden="true"></div>
+  <div id="introTitle">Echoes of Exploration<small>Stories of the machines NASA left on the Moon, on Mars and in deep space</small></div>
+  <button id="introOpen" type="button">Begin the journey 🚀</button>
+  <button id="introSkip" class="intro-skip" type="button" onclick="var i=document.getElementById('intro');if(i)i.remove();document.body.classList.remove('intro-lock')">Skip intro</button>
+</div>
+
+<a class="skip-link" href="#explorer">Skip to the space explorer</a>
+<div class="progress" id="progress"></div>
+
+<header class="hero">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="planet" aria-hidden="true"></div>
+  <div class="wrap hero-content">
+    <div class="eyebrow">A journey through the history of exploration</div>
+    <h1>They left Earth.<br><span>They left a legacy.</span></h1>
+    <p>
+      Across the Moon, Mars, and the darkness between the stars, machines
+      have explored places humans could barely imagine. Some still send
+      signals. Others fell silent long ago. Every one of them has a story
+      worth remembering.
+    </p>
+    <div class="hero-actions">
+      <button class="btn primary" id="beginBtn">Explore the artifacts ↓</button>
+      <button class="btn ghost" id="randomBtn">🎲 Surprise me</button>
+    </div>
+    <div class="hero-note">
+      3 destinations · 10 explorer stories · 3 reading levels · Real space science
+    </div>
+  </div>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="#explorer">Explore</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#stories">Postcards</a>
+  <a href="#report">Mission report</a>
+  <span class="nav-spacer"></span>
+  <button id="textBtn" aria-pressed="false" title="Change text size">Aa</button>
+  <span class="score-nav" id="navScore">⭐ 0/10</span>
+</nav>
+
+<main>
+  <section class="page-section wrap" id="explorer">
+    <div class="section-heading">
+      <div class="eyebrow">01 / Choose your destination</div>
+      <h2>Every world keeps a secret.</h2>
+      <p>
+        Choose a destination, meet its forgotten machines, and discover
+        what their journeys taught humanity. Some artifacts are physically
+        stranded on another world. Others are still traveling through space.
+      </p>
+    </div>
+
+    <div class="destinations" id="destinations">
+      <button class="destination" data-destination="Moon">
+        <span class="emoji" aria-hidden="true">🌙</span>
+        <h3>The Moon</h3>
+        <p>Landing stages, lunar vehicles, and scientific instruments left behind by Apollo.</p>
+        <span class="count">Explore lunar artifacts →</span>
+      </button>
+      <button class="destination" data-destination="Mars">
+        <span class="emoji" aria-hidden="true">🔴</span>
+        <h3>Mars</h3>
+        <p>Robots that crossed alien deserts, examined rocks, and searched for evidence of ancient water.</p>
+        <span class="count">Explore Martian artifacts →</span>
+      </button>
+      <button class="destination" data-destination="Deep Space">
+        <span class="emoji" aria-hidden="true">✨</span>
+        <h3>Deep Space</h3>
+        <p>Humanity's farthest messengers, carrying discoveries and messages beyond the planets.</p>
+        <span class="count">Follow the distant explorers →</span>
+      </button>
+    </div>
+
+    <div class="filters" id="filters" aria-label="Filter artifacts">
+      <button class="filter active" data-filter="All">All artifacts</button>
+      <button class="filter" data-filter="Moon">🌙 Moon</button>
+      <button class="filter" data-filter="Mars">🔴 Mars</button>
+      <button class="filter" data-filter="Deep Space">✨ Deep space</button>
+      <button class="filter" data-filter="Operational">Still operating</button>
+      <button class="filter" data-filter="Inactive">Inactive or silent</button>
+    </div>
+
+    <label class="eyebrow" for="search">Find an artifact</label>
+    <p><input class="search" id="search" type="search" placeholder="Try Voyager, lunar rover, water..." autocomplete="off"></p>
+
+    <p class="muted" id="resultCount" role="status" style="margin:0 0 14px;font-size:.88rem"></p>
+    <div class="artifact-grid" id="artifactGrid"></div>
+  </section>
+
+  <section class="page-section wrap" id="timeline">
+    <div class="section-heading">
+      <div class="eyebrow">02 / A history written in space</div>
+      <h2>One mission made the next possible.</h2>
+      <p>
+        Space exploration is not a collection of isolated adventures.
+        Each generation inherits engineering lessons, scientific evidence,
+        and questions from the explorers that came before.
+      </p>
+    </div>
+    <div class="timeline" id="timelineItems"></div>
+  </section>
+
+  <section class="page-section wrap" id="stories">
+    <div class="section-heading">
+      <div class="eyebrow">03 / The postcards</div>
+      <h2>Listen to the machines.</h2>
+      <p>
+        Every postcard combines a first-person story with real mission history,
+        scientific discoveries, engineering details, and a quick challenge.
+      </p>
+      <div class="level-control" id="levels" aria-label="Choose reading level">
+        <button data-level="kid">🧸 Little Explorer · 5–8</button>
+        <button data-level="mid" class="active">🚀 Space Cadet · 9–13</button>
+        <button data-level="pro">🛰️ Mission Specialist · 14+</button>
+      </div>
+    </div>
+    <div id="storyContainer"></div>
+  </section>
+
+  <section class="page-section wrap" id="report">
+    <div class="report">
+      <div class="eyebrow">04 / Your expedition</div>
+      <h2>Your discoveries matter.</h2>
+      <p>
+        Complete the quizzes to build your mission report.
+        Learn from each wrong answer and try again whenever you like.
+      </p>
+      <div class="report-score" id="reportScore">0/10</div>
+      <p id="reportMessage">Your first discovery is waiting. Choose a postcard and begin.</p>
+      <div class="report-grid" id="reportGrid"></div>
+      <div class="hero-actions" style="justify-content:center">
+        <button class="btn primary" id="reviewBtn">Review unanswered missions</button>
+        <button class="btn ghost" id="resetBtn">Start a new expedition</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="eyebrow">The mission continues</div>
+      <h2>Echoes of Exploration</h2>
+      <p>
+        An educational journey inspired by NASA's historic and ongoing
+        exploration of the Moon, Mars, and deep space.
+      </p>
+      <p>
+        Stories use a machine's voice as a creative storytelling device.
+        Historical events and scientific interpretations are based on
+        mission documentation; the machines do not literally speak.
+      </p>
+    </div>
+    <div>
+      <h2>Explore the original science</h2>
+      <ul class="sources">
+        <li><a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Science</a></li>
+        <li><a href="https://www.nasa.gov/missions/" target="_blank" rel="noopener noreferrer">NASA Missions</a></li>
+        <li><a href="https://images.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Image and Video Library</a></li>
+        <li><a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener noreferrer">NASA Solar System Exploration</a></li>
+        <li><a href="https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/" target="_blank" rel="noopener noreferrer">Spirit and Opportunity mission information</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:25px;border-top:1px solid var(--line);padding-top:20px">
+    <span>Educational project · Historical mission facts should be checked against current NASA records.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+const IMAGES = {
+  apollo:       { src: "Apollo Lunar Hardware.jpg", alt: "Apollo hardware on the Moon",                 credit: "Credit: NASA" },
+  sojourner:    { src: "Sojourner Rover.jpg", alt: "Sojourner rover on Mars",                     credit: "Credit: NASA" },
+  spirit:       { src: "Spirit.webp", alt: "Spirit rover on Mars",                        credit: "Credit: NASA" },
+  opportunity:  { src: "Spirit.webp", alt: "Opportunity rover on Mars",                   credit: "Credit: NASA" },
+  curiosity:    { src: "Curiosity.jpg", alt: "Curiosity rover on Mars",                     credit: "Credit: NASA" },
+  perseverance: { src: "Ingenuity Mars Helicopter.jpg", alt: "Perseverance rover and Ingenuity helicopter", credit: "Credit: NASA" },
+  pioneer:      { src: "pioneer_10_.webp", alt: "Pioneer spacecraft",                          credit: "Credit: NASA" },
+  voyager:      { src: "Voyager 12.jpg", alt: "Voyager spacecraft",                          credit: "Credit: NASA" },
+  horizons:     { src: "New Horizons.webp", alt: "New Horizons spacecraft at Pluto",            credit: "Credit: NASA" },
+  viking:       { src: "Viking 1..jpeg", alt: "Viking lander on Mars",                       credit: "Credit: NASA" }
+};
+const SHOW_IMAGE_ERRORS = true;
+
+const missions = [
+{
+  id: "apollo",
+  name: "Apollo Lunar Hardware",
+  short: "Apollo",
+  destination: "Moon",
+  emoji: "🌙",
+  years: "1969–1972",
+  launch: 1969,
+  yearLabel: "1969–1972",
+  category: "Historic lunar hardware",
+  status: "passive",
+  statusText: "Passive instruments remain",
+  glow: "#665b88",
+  location: "The lunar surface",
+  hardware: "Descent stages, lunar rovers, experiment packages, and laser reflectors",
+  power: "Reflectors need no electrical power; most powered experiments are inactive",
+  purpose: "Land astronauts safely and investigate the Moon",
+  missionEnd: "Apollo lunar surface operations ended in December 1972",
+  search: "Apollo lunar rover experiment laser reflector",
+  summary: "Astronauts returned to Earth, leaving landing stages, vehicles, instruments, and experiments on the Moon.",
+  legacy: "Apollo hardware and samples transformed lunar science and helped establish techniques for studying the Moon's interior and orbit.",
+  story: {
+    kid: "We went to the Moon with brave astronauts! When they flew home, they left moon cars, science boxes, and shiny mirrors behind. There is almost no weather on the Moon, so some of our things are still there.",
+    mid: "Six Apollo crews landed on the Moon between 1969 and 1972. When the astronauts returned to Earth, they left behind lunar rovers, scientific equipment, landing stages, and laser reflectors. Some experiments stopped working, but the reflectors can still help scientists measure the distance to the Moon.",
+    pro: "Apollo surface missions left a distributed collection of artifacts: descent stages, surface mobility hardware, experiments, and retroreflector arrays. While most powered surface experiments were eventually decommissioned, lunar laser ranging using surviving reflectors continues to contribute to precision measurements of the Earth–Moon system."
+  },
+  science: [
+    {
+      title: "The Moon's hidden interior",
+      text: "Seismic instruments installed by Apollo astronauts recorded moonquakes and impacts. Their measurements helped researchers investigate the Moon's internal structure."
+    },
+    {
+      title: "A laser rangefinder on another world",
+      text: "Reflectors placed by Apollo 11, 14, and 15 allow observatories to send laser pulses to the Moon and measure their return time."
+    }
+  ],
+  fact: "The Moon recedes from Earth by approximately 3.8 centimetres per year. Lunar laser ranging helps scientists measure this change.",
+  quiz: {
+    q: "Which Apollo artifact can still support scientific measurements without electrical power?",
+    options: ["A powered television camera", "A laser retroreflector", "A lunar rover battery"],
+    answer: 1,
+    explain: "A retroreflector passively returns laser light. It does not need a battery or radio transmitter."
+  },
+  timeline: "Apollo 11 lands humans on the Moon. Later Apollo missions deploy more experiments and lunar vehicles.",
+  imageQuery: "Apollo lunar surface equipment"
+},
+{
+  id: "sojourner",
+  name: "Sojourner",
+  short: "Sojourner",
+  destination: "Mars",
+  emoji: "🤖",
+  years: "1997",
+  launch: 1996,
+  yearLabel: "1996–1997",
+  category: "Mars rover",
+  status: "ended",
+  statusText: "Mission ended",
+  glow: "#8e6345",
+  location: "Ares Vallis, Mars",
+  hardware: "Small six-wheeled robotic rover",
+  power: "Solar panel with backup batteries",
+  purpose: "Demonstrate low-cost robotic mobility and investigate Martian rocks",
+  missionEnd: "Communications ended in September 1997",
+  search: "Sojourner Mars Pathfinder rover",
+  summary: "A microwave-sized robot proved that a wheeled vehicle could explore the surface of Mars.",
+  legacy: "Sojourner helped establish the practical and scientific foundations for later Mars rovers.",
+  story: {
+    kid: "Hello! I am Sojourner, a little robot car. I was about as big as a microwave. I rolled around on Mars, looked at rocks, and helped show that robot cars could explore another planet!",
+    mid: "I arrived on Mars in 1997 as part of the Pathfinder mission. Engineers designed me to investigate nearby rocks and demonstrate a new way to explore another planet. My planned mission lasted seven Martian days, but I operated for 83 sols.",
+    pro: "The Mars Pathfinder mission deployed Sojourner in July 1997. The roughly 10.5-kilogram rover used onboard sensing and autonomous hazard avoidance to examine nearby rocks. Its performance validated key elements of a comparatively inexpensive mobile planetary exploration architecture."
+  },
+  science: [
+    {
+      title: "Reading rocks",
+      text: "Sojourner's Alpha Proton X-ray Spectrometer investigated the elemental composition of rocks and soil, giving scientists evidence about the local geology."
+    },
+    {
+      title: "Testing robotic mobility",
+      text: "The mission demonstrated that a small rover could navigate around obstacles, investigate targets, and communicate its findings through a stationary lander."
+    }
+  ],
+  fact: "A sol is a Martian solar day, lasting approximately 24 hours and 39 minutes.",
+  quiz: {
+    q: "What was one of Sojourner's most important achievements?",
+    options: ["Returning Martian rocks to Earth", "Demonstrating robotic surface exploration on Mars", "Flying to Saturn"],
+    answer: 1,
+    explain: "Sojourner demonstrated a practical approach to operating a small mobile science rover on another planet."
+  },
+  timeline: "Mars Pathfinder lands, deploying the first successful mobile rover on the Martian surface.",
+  imageQuery: "Mars Pathfinder Sojourner rover"
+},
+{
+  id: "spirit",
+  name: "Spirit",
+  short: "Spirit",
+  destination: "Mars",
+  emoji: "🏜️",
+  years: "2004–2010",
+  launch: 2003,
+  yearLabel: "2003–2010",
+  category: "Mars rover",
+  status: "silent",
+  statusText: "No longer communicating",
+  glow: "#986144",
+  location: "Gusev Crater, Mars",
+  hardware: "Six-wheeled Mars Exploration Rover",
+  power: "Solar panels and rechargeable batteries",
+  purpose: "Investigate rocks and soils for evidence of past water",
+  missionEnd: "Final communication was received in March 2010",
+  search: "Spirit Mars rover Gusev Crater",
+  summary: "Spirit investigated Mars for years, then became trapped in soft soil and continued science from a stationary position.",
+  legacy: "The rover demonstrated extraordinary durability and discovered mineral evidence of ancient water-related processes.",
+  story: {
+    kid: "I am Spirit, a robot explorer on Mars. One day, my wheels sank into soft sand and I could not drive away. But I kept looking at the ground and sky, learning what I could until I stopped talking to Earth.",
+    mid: "I landed in Gusev Crater in 2004. In 2009, my wheels broke through a crust and sank into soft soil. I could no longer escape, but I continued making scientific observations while engineers on Earth tried to find a way to free me.",
+    pro: "Spirit, the MER-A rover, landed in Gusev Crater in January 2004. Wheel slippage in soft, sulfate-rich material immobilized the vehicle in 2009. The stationary rover continued collecting science data until its final communication in March 2010."
+  },
+  science: [
+    {
+      title: "Clues from silica-rich soil",
+      text: "Spirit found nearly pure silica in soil exposed by its wheels. On Earth, such deposits can form in hot springs or volcanic environments altered by steam."
+    },
+    {
+      title: "A complicated watery past",
+      text: "Rocks in the Columbia Hills showed evidence of past water-related alteration, although much of the surrounding plains consisted of volcanic material."
+    }
+  ],
+  fact: "Spirit operated for more than six years, far exceeding its original 90-sol primary mission.",
+  quiz: {
+    q: "What happened to Spirit in 2009?",
+    options: ["It landed on Jupiter", "Its wheels became trapped in soft soil", "It returned to Earth"],
+    answer: 1,
+    explain: "Spirit became embedded in soft soil and could not drive free, but it continued operating as a stationary science platform."
+  },
+  timeline: "Spirit lands at Gusev Crater and begins an extended exploration of Martian geology.",
+  imageQuery: "NASA Spirit rover Mars"
+},
+{
+  id: "opportunity",
+  name: "Opportunity",
+  short: "Opportunity",
+  destination: "Mars",
+  emoji: "🔭",
+  years: "2004–2018",
+  launch: 2003,
+  yearLabel: "2003–2019",
+  category: "Mars rover",
+  status: "silent",
+  statusText: "Mission officially ended",
+  glow: "#a36c4a",
+  location: "Meridiani Planum, Mars",
+  hardware: "Six-wheeled Mars Exploration Rover",
+  power: "Solar panels and rechargeable batteries",
+  purpose: "Study Martian rocks, soils, and the history of water",
+  missionEnd: "NASA declared the mission over in February 2019",
+  search: "Opportunity Mars rover blueberries",
+  summary: "Designed for a short mission, Opportunity worked for more than 14 years and traveled over 45 kilometres.",
+  legacy: "Its mineral discoveries helped establish that liquid water altered rocks at its landing site in Mars's distant past.",
+  story: {
+    kid: "I am Opportunity! My builders hoped I would work for just three months. I explored Mars for more than fourteen years. I found tiny round rocks like blueberries, and they helped scientists discover clues about ancient water.",
+    mid: "I landed on Mars in January 2004 with a planned mission of 90 sols. I drove more than 45 kilometres, examining rocks and craters. A major dust storm blocked the sunlight my solar panels needed, and I stopped communicating in 2018.",
+    pro: "Opportunity, the MER-B rover, landed at Meridiani Planum in January 2004. Hematite-rich spherules, sulfate minerals, and later observations of clay-bearing materials provided evidence of multiple aqueous environments with differing chemical conditions."
+  },
+  science: [
+    {
+      title: "The Martian blueberries",
+      text: "Small, rounded hematite-rich spherules were among Opportunity's most distinctive observations. Their distribution and mineralogy helped reconstruct the region's geological history."
+    },
+    {
+      title: "Water leaves a chemical signature",
+      text: "Minerals including jarosite indicated that acidic, salty water once affected rocks at Meridiani Planum. Later observations revealed evidence of different water-related conditions."
+    }
+  ],
+  fact: "Opportunity traveled about 45.16 kilometres, farther than a marathon (42.2 km), on another planet.",
+  quiz: {
+    q: "Why did Opportunity's mission end?",
+    options: ["A major dust storm interrupted solar power", "It ran out of fuel after reaching Saturn", "It was recovered by astronauts"],
+    answer: 0,
+    explain: "The 2018 dust storm reduced sunlight reaching the rover's solar panels. NASA eventually ended the mission after recovery attempts failed."
+  },
+  timeline: "Opportunity discovers mineral evidence of ancient water and continues exploring Mars for over fourteen years.",
+  imageQuery: "NASA Opportunity Mars rover"
+},
+{
+  id: "curiosity",
+  name: "Curiosity",
+  short: "Curiosity",
+  destination: "Mars",
+  emoji: "🔬",
+  years: "2012–present",
+  launch: 2011,
+  yearLabel: "2011–present",
+  category: "Active Mars rover",
+  status: "active",
+  statusText: "Mission operating",
+  glow: "#657d91",
+  location: "Gale Crater, Mars",
+  hardware: "Car-sized Mars Science Laboratory rover",
+  power: "Radioisotope thermoelectric generator",
+  purpose: "Investigate Martian geology, climate, habitability, and organic chemistry",
+  missionEnd: "Ongoing mission; check NASA for current operational updates",
+  search: "Curiosity Mars rover Gale Crater",
+  summary: "A nuclear-powered mobile laboratory investigates whether ancient Mars had environments suitable for microbial life.",
+  legacy: "Curiosity's discoveries established that ancient Gale Crater contained a lake environment that could have supported microbial life.",
+  story: {
+    kid: "I am Curiosity, a robot as big as a car! I use a laser to zap rocks and learn what they are made of. I found signs that Mars once had a lake. I am helping scientists understand whether life could ever have lived there.",
+    mid: "I landed inside Gale Crater in 2012. My instruments analyze rocks, soil, and the atmosphere. I discovered evidence that an ancient lake had many of the chemical ingredients needed for microbial life. I use nuclear power, so I do not depend on sunlight.",
+    pro: "Curiosity, the Mars Science Laboratory rover, landed in Gale Crater in August 2012. Its ChemCam instrument uses laser-induced breakdown spectroscopy, while SAM analyzes atmospheric and solid samples. Geological observations established an ancient habitable lake environment and identified preserved organic molecules."
+  },
+  science: [
+    {
+      title: "An ancient lake",
+      text: "Sedimentary rocks in Gale Crater preserve evidence of a long-lived freshwater lake environment containing chemical ingredients important to life as we know it."
+    },
+    {
+      title: "Organic chemistry on Mars",
+      text: "Curiosity detected preserved organic molecules in ancient rocks. Organic compounds can form through biological and nonbiological processes, so their presence alone does not establish that life existed."
+    }
+  ],
+  fact: "Curiosity's radioisotope power system provides electricity and heat through the radioactive decay of plutonium-238.",
+  quiz: {
+    q: "Why is Curiosity's power source useful?",
+    options: ["It allows the rover to operate without relying on sunlight", "It lets the rover fly", "It produces oxygen for an astronaut crew"],
+    answer: 0,
+    explain: "Its radioisotope thermoelectric generator provides power through day, night, and dusty conditions."
+  },
+  timeline: "Curiosity lands using a sky crane and begins investigating the ancient environment of Gale Crater.",
+  imageQuery: "NASA Curiosity rover Gale Crater"
+},
+{
+  id: "perseverance",
+  name: "Perseverance & Ingenuity",
+  short: "Perseverance",
+  destination: "Mars",
+  emoji: "🚁",
+  years: "2021–present",
+  launch: 2020,
+  yearLabel: "2020–present",
+  category: "Rover and helicopter",
+  status: "active",
+  statusText: "Rover mission ongoing",
+  glow: "#76634d",
+  location: "Jezero Crater, Mars",
+  hardware: "Sample-collecting rover and experimental helicopter",
+  power: "Rover: radioisotope power; Ingenuity: solar power",
+  purpose: "Investigate ancient habitability, collect samples, and demonstrate aerial exploration",
+  missionEnd: "Ingenuity's flight mission ended in January 2024; Perseverance's mission is ongoing",
+  search: "Perseverance Ingenuity Mars helicopter",
+  summary: "A rover investigates an ancient river delta while its small helicopter companion demonstrated powered flight on Mars.",
+  legacy: "The mission advances sample collection and demonstrates new technologies for future robotic exploration.",
+  story: {
+    kid: "I am Perseverance, a robot exploring an ancient river delta on Mars. I carry little rock treasures in special tubes. My friend Ingenuity was a tiny helicopter that flew on another planet for the very first time!",
+    mid: "I landed in Jezero Crater in 2021 to study rocks and collect carefully sealed samples. My helicopter companion, Ingenuity, was designed for a handful of test flights but completed 72. Its flying days ended in January 2024 after a rotor was damaged.",
+    pro: "Perseverance landed in Jezero Crater in February 2021. Its instruments characterize ancient environments, search for potential biosignatures, and collect rock cores for possible future return. Ingenuity's technology demonstration completed 72 flights before rotor damage ended flight operations in January 2024."
+  },
+  science: [
+    {
+      title: "An ancient river delta",
+      text: "Jezero Crater preserves a former lake basin and delta deposits. Sedimentary and igneous samples offer complementary clues about the planet's geological history."
+    },
+    {
+      title: "Making oxygen on Mars",
+      text: "The MOXIE experiment demonstrated the production of oxygen from carbon dioxide in the Martian atmosphere, a useful step toward future human exploration."
+    }
+  ],
+  fact: "Ingenuity completed 72 flights, far beyond its original five-flight technology demonstration plan. Its flight mission ended after a rotor was damaged in January 2024.",
+  quiz: {
+    q: "What did Ingenuity demonstrate?",
+    options: ["Powered, controlled flight on another planet", "A human landing on Mars", "The discovery of living Martian animals"],
+    answer: 0,
+    explain: "Ingenuity demonstrated that a small powered aircraft could fly in Mars's extremely thin atmosphere."
+  },
+  timeline: "Perseverance lands at Jezero Crater. Ingenuity makes the first powered, controlled flights on another planet.",
+  imageQuery: "NASA Perseverance rover Ingenuity helicopter"
+},
+{
+  id: "pioneer",
+  name: "Pioneer 10 & 11",
+  short: "Pioneer",
+  destination: "Deep Space",
+  emoji: "📡",
+  years: "1972–2003",
+  launch: 1972,
+  yearLabel: "1972–2003",
+  category: "Deep-space probes",
+  status: "silent",
+  statusText: "No longer communicating",
+  glow: "#5a567b",
+  location: "Outbound trajectories through space",
+  hardware: "Two planetary probes with high-gain antennas and radioisotope generators",
+  power: "Radioisotope thermoelectric generators; spacecraft no longer communicate",
+  purpose: "Explore Jupiter and Saturn and investigate the outer Solar System",
+  missionEnd: "Pioneer 11 contact ended in 1995; Pioneer 10's last signal was received in 2003",
+  search: "Pioneer 10 Pioneer 11 spacecraft plaque",
+  summary: "Pioneer 10 crossed the asteroid belt and explored Jupiter; Pioneer 11 continued to Saturn.",
+  legacy: "The missions supplied foundational measurements of the outer planets and demonstrated technologies used by later probes.",
+  story: {
+    kid: "We are Pioneer 10 and Pioneer 11. We traveled far from Earth to explore giant planets. We cannot talk to Earth anymore, but we carry special picture plaques showing where we came from.",
+    mid: "Pioneer 10 launched in 1972 and became the first spacecraft to explore Jupiter up close. Pioneer 11 followed and later became the first spacecraft to explore Saturn. Both now travel silently, carrying plaques designed to communicate our origins to anyone who might someday find them.",
+    pro: "Pioneer 10 and 11 were early outer-planet missions using radioisotope power systems. Their flybys provided essential data on Jupiter and Saturn and helped establish the radiation, navigation, and communications requirements for subsequent deep-space missions."
+  },
+  science: [
+    {
+      title: "Crossing the asteroid belt",
+      text: "Pioneer 10 demonstrated that a spacecraft could successfully traverse the asteroid belt on its way to the outer planets."
+    },
+    {
+      title: "Investigating giant planets",
+      text: "Pioneer measurements helped characterize Jupiter's radiation environment and supplied important early data about Saturn and its surroundings."
+    }
+  ],
+  fact: "The Pioneer plaques depict human figures, the Solar System, and a map indicating the Sun's location relative to pulsars.",
+  quiz: {
+    q: "What special item did Pioneer 10 and 11 carry?",
+    options: ["A lunar rover", "A plaque describing humanity's origins", "A telescope designed to land on Mars"],
+    answer: 1,
+    explain: "Each spacecraft carries a metal plaque designed to convey information about humanity and the spacecraft's origin."
+  },
+  timeline: "Pioneer 10 and 11 explore Jupiter and Saturn, paving the way for later outer-planet missions.",
+  imageQuery: "Pioneer 10 spacecraft illustration plaque"
+},
+{
+  id: "voyager",
+  name: "Voyager 1 & 2",
+  short: "Voyager",
+  destination: "Deep Space",
+  emoji: "💿",
+  years: "1977–present",
+  launch: 1977,
+  yearLabel: "1977–present",
+  category: "Interstellar probes",
+  status: "active",
+  statusText: "Deep-space missions operating",
+  glow: "#405b80",
+  location: "Beyond the heliosphere",
+  hardware: "Two deep-space probes carrying scientific instruments and Golden Records",
+  power: "Radioisotope thermoelectric generators",
+  purpose: "Explore giant planets and measure the outer boundary of the Sun's influence",
+  missionEnd: "Ongoing missions; instrument availability and spacecraft health change over time",
+  search: "Voyager spacecraft Golden Record",
+  summary: "Voyager 1 and 2 explored the outer planets and later crossed the heliopause into interstellar space.",
+  legacy: "Their planetary observations transformed our understanding of the outer Solar System, while their interstellar measurements study space beyond the Sun's solar-wind bubble.",
+  story: {
+    kid: "We are Voyager 1 and Voyager 2! We left Earth in 1977 and flew past giant planets. Now we travel beyond the Sun's bubble into the space between stars. We carry Golden Records with music, sounds, pictures, and greetings from Earth.",
+    mid: "Our journey began in 1977. We visited giant planets before continuing outward. Voyager 1 crossed the heliopause in 2012, and Voyager 2 followed in 2018. Our Golden Records carry selected sounds, music, images, and greetings from our home planet.",
+    pro: "Voyager 1 and Voyager 2 exploited a favorable planetary alignment to conduct multiple giant-planet encounters. Their heliopause crossings in 2012 and 2018 provided direct in-situ measurements of the transition from the heliosphere to the local interstellar medium."
+  },
+  science: [
+    {
+      title: "Worlds seen up close",
+      text: "Voyager observations revealed active volcanoes on Io, complex atmospheres, rings, and previously unknown features of the giant planets and their moons."
+    },
+    {
+      title: "The boundary of the heliosphere",
+      text: "Their instruments measured changes in particles and magnetic fields around the heliopause, helping scientists study the environment beyond the Sun's solar-wind bubble."
+    }
+  ],
+  fact: "Voyager 1 reaches one light-day from Earth in mid-November 2026. From then on, a radio message takes about 24 hours to arrive, and the delay keeps growing.",
+  quiz: {
+    q: "What boundary did Voyager 1 and Voyager 2 cross?",
+    options: ["The surface of the Sun", "The heliopause", "The atmosphere of Pluto"],
+    answer: 1,
+    explain: "The heliopause marks the outer boundary of the heliosphere, where the solar wind meets the interstellar environment."
+  },
+  timeline: "Voyager 1 and 2 launch, explore the outer planets, and later cross the heliopause.",
+  imageQuery: "NASA Voyager spacecraft Golden Record"
+},
+{
+  id: "horizons",
+  name: "New Horizons",
+  short: "New Horizons",
+  destination: "Deep Space",
+  emoji: "🪐",
+  years: "2006–present",
+  launch: 2006,
+  yearLabel: "2006–present",
+  category: "Kuiper Belt explorer",
+  status: "active",
+  statusText: "Deep-space mission",
+  glow: "#6b527a",
+  location: "Kuiper Belt, beyond Neptune",
+  hardware: "Compact robotic spacecraft with imaging and particle instruments",
+  power: "Radioisotope thermoelectric generator",
+  purpose: "Explore Pluto, its moons, and distant Kuiper Belt objects",
+  missionEnd: "Extended mission; check NASA for current mission updates",
+  search: "New Horizons Pluto Arrokoth",
+  summary: "After revealing Pluto's extraordinary landscapes, New Horizons continued into the distant Kuiper Belt.",
+  legacy: "The mission revealed Pluto as a geologically diverse world and provided the first close-up exploration of a small Kuiper Belt object.",
+  story: {
+    kid: "I am New Horizons! I raced toward Pluto and saw icy mountains and a giant heart-shaped region. Then I flew past a tiny, snowman-shaped space rock called Arrokoth. My journey carried me into the icy edge of our Solar System.",
+    mid: "I launched in 2006 and flew past Pluto in July 2015, revealing mountains, glaciers, and a surprisingly active world. In 2019, I visited Arrokoth, a distant Kuiper Belt object. My observations are helping scientists understand how the Solar System formed.",
+    pro: "New Horizons conducted the first close reconnaissance of Pluto in July 2015 and the Kuiper Belt object Arrokoth in January 2019. Pluto's nitrogen-ice glaciers, complex atmospheric structure, and evidence of geological activity reshaped models of small icy worlds."
+  },
+  science: [
+    {
+      title: "Pluto is a complex world",
+      text: "Imaging revealed nitrogen-ice glaciers, water-ice mountains, layered atmospheric haze, and evidence of geological activity on Pluto."
+    },
+    {
+      title: "A relic of planetary formation",
+      text: "Arrokoth's gently joined lobes and relatively smooth appearance provide evidence about how small bodies assembled in the early Solar System."
+    }
+  ],
+  fact: "New Horizons flew past Pluto on July 14, 2015, then visited Arrokoth on January 1, 2019.",
+  quiz: {
+    q: "Which object did New Horizons visit after Pluto?",
+    options: ["Arrokoth", "Europa", "Titan"],
+    answer: 0,
+    explain: "New Horizons flew past Arrokoth in 2019, providing the first close-up study of this distant Kuiper Belt object."
+  },
+  timeline: "New Horizons flies past Pluto and later explores the Kuiper Belt object Arrokoth.",
+  imageQuery: "NASA New Horizons Pluto Arrokoth"
+},
+{
+  id: "viking",
+  name: "Viking 1 & 2 Landers",
+  short: "Viking",
+  destination: "Mars",
+  emoji: "🛬",
+  years: "1976–1982",
+  launch: 1975,
+  yearLabel: "1975–1982",
+  category: "Stationary Mars landers",
+  status: "silent",
+  statusText: "Inactive on Mars",
+  glow: "#9b664a",
+  location: "Chryse Planitia and Utopia Planitia, Mars",
+  hardware: "Two stationary landers with cameras and biological and chemical experiments",
+  power: "Radioisotope thermoelectric generators",
+  purpose: "Study Martian surface conditions, soil chemistry, weather, and possible biological activity",
+  missionEnd: "Viking 1 ended operations in 1982; Viking 2 ended in 1980",
+  search: "NASA Viking 1 Viking 2 Mars lander",
+  summary: "Two stationary laboratories became the first US spacecraft to successfully operate on the Martian surface.",
+  legacy: "Viking produced foundational measurements of Martian weather, soil chemistry, and possible biological activity.",
+  story: {
+    kid: "We are Viking 1 and Viking 2. We landed on Mars a long time ago and stayed in one place. We took pictures, checked the weather, and tested the soil to look for clues about whether tiny living things might exist.",
+    mid: "We arrived on Mars in 1976, carrying cameras, weather sensors, and experiments that examined the soil. Some tests produced intriguing chemical results, but the evidence did not establish that life had been detected. We became a foundation for later Mars exploration.",
+    pro: "The Viking landers conducted the first extensive US in-situ investigation of Martian surface chemistry, meteorology, and potential biological activity. Their biology experiments produced results that remain historically significant, but no generally accepted detection of Martian life was established."
+  },
+  science: [
+    {
+      title: "Testing the soil",
+      text: "Viking performed experiments designed to investigate potential biological activity. Some results were unexpected, while the organic-molecule measurements and later interpretations complicated their meaning."
+    },
+    {
+      title: "Weather on another planet",
+      text: "The landers measured temperature, pressure, winds, and atmospheric conditions, providing a long-running record of the local Martian environment."
+    }
+  ],
+  fact: "Viking 1 operated on Mars for more than six years, far longer than its original planned surface mission.",
+  quiz: {
+    q: "What was one of the main goals of the Viking landers?",
+    options: ["Collecting samples from Jupiter", "Testing Martian soil for possible biological activity", "Flying a helicopter over Saturn"],
+    answer: 1,
+    explain: "Viking carried biology experiments and instruments to investigate the composition and possible biological properties of Martian soil."
+  },
+  timeline: "Viking 1 and Viking 2 land on Mars and conduct extensive surface science experiments.",
+  imageQuery: "NASA Viking lander Mars surface"
+}
+];
+
+/* How each machine worked: shows the missions in action */
+const HOW = {
+  apollo: "Astronauts carried instruments to the surface in pieces and set them up by hand. The powered stations from Apollo 12 to 17 ran on a small nuclear generator and radioed data to Earth until they were switched off in 1977. The laser reflectors need no power at all.",
+  sojourner: "Sojourner could not call Earth directly. It sent its data to the Pathfinder lander, which relayed it home. Radio signals need several minutes to cross the distance, so engineers sent a plan each Martian morning, and Sojourner used its own sensors to steer around hazards.",
+  spirit: "Each sol, engineers at NASA's Jet Propulsion Laboratory planned the next day of driving and science, sent the commands, and waited for the results. Spirit used cameras to choose targets and a grinding tool to scrape into rocks. After it became stuck, weak winter sunlight on its solar panels likely left it too cold and low on power to wake up.",
+  opportunity: "Opportunity lived on sunlight. Dust slowly coated its solar panels, and now and then a gust of wind cleaned them, which kept it going for years. In 2018 a dust storm that wrapped around the whole planet blocked the Sun for so long that the rover stopped answering.",
+  curiosity: "Curiosity zaps rocks from a distance with a laser, then drills into the promising ones and drops the powder into tiny laboratories inside its body. A nuclear power source keeps it warm and supplies electricity, so it can work through cold Martian nights.",
+  perseverance: "Perseverance drills rock cores and seals them in titanium tubes. Ingenuity rode to Mars under the rover's belly, was set down on the ground, and flew on its own because radio signals take too long for anyone to steer it live.",
+  pioneer: "The Pioneers spun like tops to stay steady while their dish antennas pointed at Earth, and they made their own electricity from a small nuclear generator. Their signals grew weaker with distance until Pioneer 10's last message in 2003, when it was about 80 times farther from the Sun than Earth is.",
+  voyager: "Both Voyagers run on plutonium generators that lose a little power every year. To keep sending signals, engineers switch off instruments one by one and keep the most important ones talking through NASA's giant Deep Space Network dishes.",
+  horizons: "New Horizons slept through much of its long trip to Pluto and woke up now and then for check-ups. During the 2015 flyby it recorded its data instead of sending it live, then took about 16 months to transmit everything home.",
+  viking: "Each lander used a robotic arm to scoop soil into small onboard laboratories that tested it for chemistry and possible life. The orbiters overhead relayed the messages, and the landers also recorded the weather."
+};
+
+const milestones = [
+  {year:"1969", title:"Apollo 11 reaches the Moon", text:"Humans walk on the lunar surface and leave scientific equipment behind."},
+  {year:"1972", title:"Pioneer 10 launches", text:"A new generation of robotic exploration begins its journey to Jupiter and beyond."},
+  {year:"1976", title:"Viking lands on Mars", text:"Stationary laboratories investigate Martian soil, weather, and possible biological activity."},
+  {year:"1977", title:"Voyager begins its journey", text:"Two spacecraft set out to explore the giant planets and the distant Solar System."},
+  {year:"1997", title:"Sojourner rolls across Mars", text:"A small rover demonstrates a new approach to mobile planetary science."},
+  {year:"2004", title:"Spirit and Opportunity land", text:"Twin rovers uncover mineral evidence of ancient water and Martian environmental change."},
+  {year:"2012", title:"Curiosity arrives", text:"A nuclear-powered laboratory investigates an ancient Martian lake environment."},
+  {year:"2015", title:"New Horizons visits Pluto", text:"A distant icy world becomes a complex landscape rather than a blurry point of light."},
+  {year:"2021", title:"Perseverance and Ingenuity", text:"Sample collection and powered flight open new chapters in planetary exploration."}
+];
+
+const state = {
+  level: "mid",
+  filter: "All",
+  search: "",
+  destination: null,
+  answers: {},
+  attempts: {},
+  audio: null
+};
+
+const $ = (selector, root=document) => root.querySelector(selector);
+const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+
+function safeGet(key, fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function safeSet(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function prefersReducedMotion() {
+  return matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[ch]);
+}
+
+function toast(message) {
+  const el = $("#toast");
+  el.textContent = message;
+  el.classList.add("show");
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => el.classList.remove("show"), 2800);
+}
+
+function getMission(id) {
+  return missions.find(m => m.id === id);
+}
+
+function getStatusClass(m) {
+  if (m.status === "active") return "active";
+  if (m.status === "passive") return "passive";
+  if (m.status === "ended") return "ended";
+  return "silent";
+}
+
+function statusDescription(m) {
+  if (m.id === "apollo") return "Some passive reflectors remain scientifically useful; most powered surface experiments are inactive.";
+  if (m.id === "perseverance") return "Perseverance is an active rover mission; Ingenuity's flight mission ended in 2024.";
+  if (m.id === "viking") return "Both landers are inactive. Their mission data remain scientifically valuable.";
+  if (m.id === "spirit") return "The rover is inactive and no longer communicates with Earth.";
+  if (m.id === "opportunity") return "The rover is inactive; NASA ended the mission in 2019.";
+  if (m.id === "sojourner") return "The rover is inactive and the Pathfinder mission ended in 1997.";
+  if (m.id === "pioneer") return "Both probes are silent; their last successful communications occurred in 1995 and 2003.";
+  if (m.id === "voyager") return "The probes remain deep-space missions; available instruments and engineering status can change.";
+  if (m.id === "horizons") return "The spacecraft continues its extended Kuiper Belt exploration; check current NASA updates.";
+  return "Consult NASA for current mission status.";
+}
+
+function operationalGroup(m) {
+  return ["active"].includes(m.status) ? "Operational" : "Inactive";
+}
+
+function renderDestinations() {
+  $$(".destination").forEach(button => {
+    const d = button.dataset.destination;
+    button.classList.toggle("selected", state.destination === d);
+    button.setAttribute("aria-pressed", String(state.destination === d));
+  });
+}
+
+function matchesMission(m) {
+  if (state.destination && m.destination !== state.destination) return false;
+
+  if (["Moon","Mars","Deep Space"].includes(state.filter) && m.destination !== state.filter) {
+    return false;
+  }
+
+  if (state.filter === "Operational" && operationalGroup(m) !== "Operational") return false;
+  if (state.filter === "Inactive" && operationalGroup(m) !== "Inactive") return false;
+
+  const q = state.search.trim().toLowerCase();
+
+  if (q) {
+    const haystack = [
+      m.name, m.destination, m.category, m.location,
+      m.hardware, m.purpose, m.summary, m.legacy,
+      m.fact, ...m.science.map(s => s.title + " " + s.text)
+    ].join(" ").toLowerCase();
+
+    if (!haystack.includes(q)) return false;
+  }
+
+  return true;
+}
+
+function renderCards() {
+  const grid = $("#artifactGrid");
+
+  $$("#filters button").forEach(b => b.setAttribute("aria-pressed", String(b.classList.contains("active"))));
+  const filtered = missions.filter(matchesMission);
+  $("#resultCount").textContent = `Showing ${filtered.length} of ${missions.length} artifacts`;
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty-state">No artifacts match your search. Try another destination or keyword.</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(m => `
+    <article class="artifact-card">
+      <div class="card-art" style="--glow:${m.glow}">
+        <span class="art-year">${escapeHTML(m.years)}</span>
+        <span class="art-emoji" aria-hidden="true">${m.emoji}</span>
+      </div>
+      <div class="card-body">
+        <div><span class="status ${getStatusClass(m)}">${escapeHTML(m.statusText)}</span></div>
+        <h3>${escapeHTML(m.name)}</h3>
+        <div class="tagline">${escapeHTML(m.destination)} · ${escapeHTML(m.category)}</div>
+        <p>${escapeHTML(m.summary)}</p>
+        <p class="muted" style="font-size:.8rem">📍 ${escapeHTML(m.location)}</p>
+        <button class="btn primary open-story" data-id="${m.id}">Open postcard →</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderTimeline() {
+  $("#timelineItems").innerHTML = milestones.map(m => `
+    <article class="timeline-item">
+      <time>${escapeHTML(m.year)}</time>
+      <h3>${escapeHTML(m.title)}</h3>
+      <p>${escapeHTML(m.text)}</p>
+    </article>
+  `).join("");
+}
+
+function levelText(m) {
+  return m.story[state.level] || m.story.mid;
+}
+
+function placeholderMarkup(m, failed) {
+  const label = failed && SHOW_IMAGE_ERRORS
+    ? "⚠ Picture link could not be loaded (open the Console for help)"
+    : "Illustrative symbol · " + m.destination;
+
+  return `
+    <span class="placeholder" aria-hidden="true">${m.emoji}</span>
+    <span class="image-label">${escapeHTML(label)}</span>
+  `;
+}
+
+/* Turns whatever was pasted into an address the browser can load. */
+function resolveImage(raw) {
+  let s = String(raw || "").trim().replace(/^["'`]+|["'`]+$/g, "").trim();
+  if (!s) return null;
+
+  /* A NASA Image Library page link: build the direct picture links from its ID */
+  const nasa = s.match(/images\.nasa\.gov\/details[\/-]([^\/?#]+)/i);
+  if (nasa) {
+    const id = encodeURIComponent(decodeURIComponent(nasa[1]));
+    const base = "https://images-assets.nasa.gov/image/" + id + "/" + id;
+    return { src: base + "~large.jpg", alts: [base + "~medium.jpg", base + "~orig.jpg"] };
+  }
+
+  if (/^[a-zA-Z]:[\\\/]/.test(s)) {
+    /* A Windows path such as C:\Users\me\apollo.jpg */
+    s = "file:///" + s.replace(/\\/g, "/");
+  } else if (!/^(https?:|data:|blob:|file:|\/\/)/i.test(s)) {
+    s = s.replace(/\\/g, "/");                     /* images\apollo.jpg -> images/apollo.jpg */
+    if (/^www\./i.test(s)) s = "https://" + s;    /* www.site.com/pic.jpg */
+  }
+
+  s = s.replace(/ /g, "%20");
+
+  if (/^file:/i.test(s) && /^https?:$/.test(location.protocol)) {
+    console.warn("Echoes of Exploration: a picture on your own computer cannot be shown on a hosted website. Upload it to your site's images folder and use \"images/name.jpg\" instead.");
+  }
+
+  return { src: s, alts: [] };
+}
+
+function photoMarkup(m) {
+  const img = IMAGES[m.id];
+  const pic = img ? resolveImage(img.src) : null;
+
+  if (pic) {
+    return `
+      <img src="${escapeHTML(pic.src)}" data-alts="${escapeHTML(JSON.stringify(pic.alts))}" alt="${escapeHTML(img.alt || m.name)}" loading="lazy" referrerpolicy="no-referrer">
+      <span class="image-label">${escapeHTML(img.credit || "Credit: NASA")}</span>
+    `;
+  }
+
+  return placeholderMarkup(m);
+}
+
+function quizMarkup(m) {
+  const answer = state.answers[m.id];
+  const q = m.quiz;
+
+  return `
+    <div class="quiz" id="quiz-${m.id}">
+      <div class="question-number">Mission challenge</div>
+      <h3>${escapeHTML(q.q)}</h3>
+      <div class="quiz-options">
+        ${q.options.map((option, i) => {
+          let cls = "";
+          if (answer !== undefined && i === q.answer) cls = "correct";
+          else if (answer !== undefined && i === answer && answer !== q.answer) cls = "incorrect";
+
+          return `<button class="${cls}" data-answer="${i}" data-mission="${m.id}" ${answer !== undefined ? "disabled" : ""}>
+            ${String.fromCharCode(65+i)}. ${escapeHTML(option)}
+          </button>`;
+        }).join("")}
+      </div>
+      <div class="quiz-feedback ${answer === undefined ? "" : answer === q.answer ? "good" : "bad"}" aria-live="polite">
+        ${answer === undefined ? "Choose an answer to test your knowledge." :
+          (answer === q.answer ? "Correct! " : "Not quite. ") + escapeHTML(q.explain)}
+      </div>
+      ${answer !== undefined ? `<button class="btn ghost retry-question" data-id="${m.id}" style="margin-top:12px">Try this question again</button>` : ""}
+    </div>
+  `;
+}
+
+function renderStory(m) {
+  const index = missions.indexOf(m) + 1;
+  const container = $("#storyContainer");
+
+  const science = m.science.map(s => `
+    <div class="discovery">
+      <strong>${escapeHTML(s.title)}</strong>
+      <p>${escapeHTML(s.text)}</p>
+    </div>
+  `).join("");
+
+  const card = document.createElement("article");
+  card.className = "story";
+  card.id = "story-" + m.id;
+
+  card.innerHTML = `
+    <div class="story-panel">
+      <div class="story-head">
+        <div class="eyebrow">Postcard ${index} of ${missions.length} · ${escapeHTML(m.destination)}</div>
+        <h2>${m.emoji} ${escapeHTML(m.name)}</h2>
+        <div class="story-meta">
+          <span>${escapeHTML(m.location)}</span>
+          <span>·</span>
+          <span>${escapeHTML(m.years)}</span>
+        </div>
+        <p style="color:var(--muted);margin-bottom:0">${escapeHTML(m.summary)}</p>
+      </div>
+
+      <div class="story-layout">
+        <aside class="story-visual">
+          <div class="story-image" style="--glow:${m.glow}" id="image-${m.id}">
+            ${photoMarkup(m)}
+          </div>
+
+          <div class="hardware-box">
+            <div class="hardware-item"><small>Hardware</small><strong>${escapeHTML(m.hardware)}</strong></div>
+            <div class="hardware-item"><small>Power</small><strong>${escapeHTML(m.power)}</strong></div>
+            <div class="hardware-item"><small>Mission purpose</small><strong>${escapeHTML(m.purpose)}</strong></div>
+            <div class="hardware-item"><small>Mission outcome</small><strong>${escapeHTML(m.missionEnd)}</strong></div>
+          </div>
+
+          <div class="fact">
+            <strong>💡 A remarkable fact</strong>
+            <p>${escapeHTML(m.fact)}</p>
+          </div>
+
+          <div style="margin-top:15px">
+            <span class="status ${getStatusClass(m)}">${escapeHTML(m.statusText)}</span>
+            <p class="muted" style="font-size:.82rem">${escapeHTML(statusDescription(m))}</p>
+          </div>
+        </aside>
+
+        <div class="story-content">
+          <h3>The machine's voice</h3>
+          <p class="story-voice">${escapeHTML(levelText(m))}</p>
+
+          <div class="story-actions">
+            <button class="btn primary read-story" data-id="${m.id}">🔊 Read postcard</button>
+            <button class="btn stop-reading" data-id="${m.id}">■ Stop audio</button>
+            <button class="btn ghost next-story" data-id="${m.id}">Next postcard ↓</button>
+          </div>
+
+          <h3>How it worked</h3>
+          <p>${escapeHTML(HOW[m.id] || "")}</p>
+
+          <h3>What the mission discovered</h3>
+          ${science}
+
+          <h3>Why this machine matters</h3>
+          <p>${escapeHTML(m.legacy)}</p>
+
+          <h3>The final chapter</h3>
+          <p>${escapeHTML(m.missionEnd)}. A mission's end does not erase its discoveries: scientists continue to use archived measurements, images, and engineering lessons.</p>
+
+          ${quizMarkup(m)}
+        </div>
+      </div>
+    </div>
+  `;
+
+  container.appendChild(card);
+}
+
+function renderAllStories() {
+  $("#storyContainer").innerHTML = "";
+  missions.forEach(renderStory);
+}
+
+function renderScore() {
+  const answered = Object.keys(state.answers).length;
+  const correct = missions.filter(m => state.answers[m.id] === m.quiz.answer).length;
+
+  $("#navScore").textContent = `⭐ ${correct}/${missions.length}`;
+  $("#reportScore").textContent = `${correct}/${missions.length}`;
+
+  if (answered === 0) {
+    $("#reportMessage").textContent = "Your first discovery is waiting. Choose a postcard and begin.";
+  } else if (answered < missions.length) {
+    $("#reportMessage").textContent =
+      `You have answered ${answered} of ${missions.length} mission challenges. ` +
+      `${correct} answers are correct. Explore the remaining postcards to complete your expedition.`;
+  } else if (correct === missions.length) {
+    $("#reportMessage").textContent =
+      "Outstanding! You have completed every mission challenge. Your expedition connects lunar experiments, Martian discoveries, and the exploration of deep space.";
+  } else {
+    $("#reportMessage").textContent =
+      "Your expedition is complete! Review the questions you missed, revisit the science, and try again to strengthen your mission knowledge.";
+  }
+
+  $("#reportGrid").innerHTML = missions.map(m => {
+    const a = state.answers[m.id];
+    const result = a === undefined ? "Not attempted" :
+      a === m.quiz.answer ? "Correct answer" : "Review recommended";
+
+    return `
+      <div class="report-item">
+        <strong>${m.emoji} ${escapeHTML(m.short)}</strong>
+        <span>${result}</span>
+      </div>
+    `;
+  }).join("");
+}
+
+function persistAnswers() {
+  safeSet("echoes_answers_v1", state.answers);
+  safeSet("echoes_attempts_v1", state.attempts);
+}
+
+function updateStoryQuiz(id, focusTarget) {
+  const m = getMission(id);
+  const old = $("#quiz-" + id);
+  if (!old) return;
+
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = quizMarkup(m);
+  const fresh = wrapper.firstElementChild;
+  old.replaceWith(fresh);
+
+  if (focusTarget === "feedback") {
+    const fb = $(".quiz-feedback", fresh);
+    if (fb) { fb.tabIndex = -1; fb.focus({preventScroll: true}); }
+  } else if (focusTarget === "first") {
+    const first = $(".quiz-options button", fresh);
+    if (first) first.focus({preventScroll: true});
+  }
+}
+
+function answerQuestion(id, index) {
+  const m = getMission(id);
+  if (!m || state.answers[id] !== undefined) return;
+
+  state.answers[id] = index;
+  state.attempts[id] = (state.attempts[id] || 0) + 1;
+
+  persistAnswers();
+  updateStoryQuiz(id, "feedback");
+  renderScore();
+
+  if (index === m.quiz.answer) {
+    toast("Correct! Your scientific knowledge is growing. ⭐");
+  } else {
+    toast("Not quite. Read the explanation and try again whenever you like.");
+  }
+}
+
+function retryQuestion(id) {
+  delete state.answers[id];
+  persistAnswers();
+  updateStoryQuiz(id, "first");
+  renderScore();
+  toast("Question reset. Give it another try!");
+}
+
+function savePrefs() {
+  safeSet("echoes_prefs_v1", {level: state.level, large: document.body.classList.contains("large-text")});
+}
+
+function setLevel(level, quiet) {
+  if (!["kid", "mid", "pro"].includes(level)) return;
+
+  state.level = level;
+  savePrefs();
+
+  $$("#levels button").forEach(button => {
+    const active = button.dataset.level === level;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  missions.forEach(m => {
+    const el = $("#story-" + m.id);
+    if (!el) return;
+
+    const voice = $(".story-voice", el);
+    voice.textContent = levelText(m);
+  });
+
+  if (!quiet) toast(level === "kid" ? "Little Explorer reading level selected." :
+    level === "pro" ? "Mission Specialist reading level selected." :
+    "Space Cadet reading level selected.");
+}
+
+function stopAudio() {
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+  state.audio = null;
+}
+
+function readStory(id) {
+  const m = getMission(id);
+
+  if (!m) return;
+
+   if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+    toast("Audio narration is not supported in this browser.");
+    return;
+  }
+
+  stopAudio();
+
+  const text = [
+    m.name + ".",
+    levelText(m),
+    "Scientific discoveries.",
+    ...m.science.map(s => s.title + ". " + s.text),
+    "A remarkable fact. " + m.fact
+  ].join(" ");
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = state.level === "kid" ? 0.86 : state.level === "pro" ? 0.97 : 0.92;
+  utterance.pitch = 1;
+  utterance.onend = () => { state.audio = null; };
+  utterance.onerror = event => {
+    state.audio = null;
+    if (event && (event.error === "interrupted" || event.error === "canceled")) return;
+    toast("Narration stopped or unavailable.");
+  };
+
+  state.audio = utterance;
+  window.speechSynthesis.speak(utterance);
+}
+
+function openStory(id) {
+  const el = $("#story-" + id);
+
+  if (!el) return;
+
+  el.scrollIntoView({
+    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    block: "start"
+  });
+}
+
+function nextStory(id) {
+  const index = missions.findIndex(m => m.id === id);
+  const next = missions[index + 1];
+
+  if (next) openStory(next.id);
+  else $("#report").scrollIntoView({behavior: prefersReducedMotion() ? "auto" : "smooth"});
+}
+
+function resetExpedition() {
+  const btn = $("#resetBtn");
+
+  if (!resetExpedition.armed) {
+    resetExpedition.armed = true;
+    btn.dataset.label = btn.textContent;
+    btn.textContent = "Click again to confirm";
+    toast("This clears your saved quiz answers. Click again within 5 seconds to confirm.");
+    clearTimeout(resetExpedition.timer);
+    resetExpedition.timer = setTimeout(() => {
+      resetExpedition.armed = false;
+      btn.textContent = btn.dataset.label;
+    }, 5000);
+    return;
+  }
+
+  clearTimeout(resetExpedition.timer);
+  resetExpedition.armed = false;
+  btn.textContent = btn.dataset.label;
+
+  stopAudio();
+
+  state.answers = {};
+  state.attempts = {};
+
+  persistAnswers();
+
+  missions.forEach(m => updateStoryQuiz(m.id));
+
+  renderScore();
+
+  toast("New expedition ready.");
+  openStory(missions[0].id);
+}
+
+/* Main interaction delegation */
+document.addEventListener("click", event => {
+  const destination = event.target.closest("[data-destination]");
+
+  if (destination) {
+    const d = destination.dataset.destination;
+
+    state.destination = state.destination === d ? null : d;
+    state.filter = "All";
+
+    $$("#filters button").forEach(b => b.classList.toggle("active", b.dataset.filter === "All"));
+
+    renderDestinations();
+    renderCards();
+    $("#artifactGrid").scrollIntoView({behavior: prefersReducedMotion() ? "auto" : "smooth", block:"start"});
+    return;
+  }
+
+  const filter = event.target.closest("[data-filter]");
+
+  if (filter) {
+    state.filter = filter.dataset.filter;
+    state.destination = null;
+
+    $$("#filters button").forEach(b => b.classList.toggle("active", b === filter));
+
+    renderDestinations();
+    renderCards();
+    return;
+  }
+
+  const open = event.target.closest(".open-story");
+
+  if (open) {
+    openStory(open.dataset.id);
+    return;
+  }
+
+  const level = event.target.closest("[data-level]");
+
+  if (level) {
+    setLevel(level.dataset.level);
+    return;
+  }
+
+  const answer = event.target.closest("[data-answer]");
+
+  if (answer) {
+    answerQuestion(answer.dataset.mission, Number(answer.dataset.answer));
+    return;
+  }
+
+  const retry = event.target.closest(".retry-question");
+
+  if (retry) {
+    retryQuestion(retry.dataset.id);
+    return;
+  }
+
+  const read = event.target.closest(".read-story");
+
+  if (read) {
+    readStory(read.dataset.id);
+    return;
+  }
+
+  const stop = event.target.closest(".stop-reading");
+
+  if (stop) {
+    stopAudio();
+    toast("Narration stopped.");
+    return;
+  }
+
+  const next = event.target.closest(".next-story");
+
+  if (next) {
+    nextStory(next.dataset.id);
+    return;
+  }
+});
+
+/* If a picture link is broken, fall back to the symbol and tell the developer */
+document.addEventListener("error", event => {
+  const img = event.target;
+  if (!img || img.tagName !== "IMG" || !img.closest(".story-image")) return;
+  /* Try the next possible address first (a NASA page link has several sizes) */
+  let alts = [];
+  try { alts = JSON.parse(img.dataset.alts || "[]"); } catch { alts = []; }
+  if (alts.length) {
+    img.dataset.alts = JSON.stringify(alts.slice(1));
+    img.src = alts[0];
+    return;
+  }
+
+  const wrap = img.closest(".story-image");
+  const id = wrap.id.replace("image-", "");
+  const m = getMission(id);
+  console.warn(
+    "Echoes of Exploration: the picture for '" + id + "' could not be loaded: " + img.getAttribute("src") + "\n" +
+    "Check: (1) the link opens the picture by itself in a new browser tab, " +
+    "(2) a file on your computer is inside an images folder next to this HTML file and the link is images/name.jpg, " +
+    "(3) some websites block other sites from showing their pictures, so download the picture and use option 2."
+  );
+  if (m) wrap.innerHTML = placeholderMarkup(m, true);
+}, true);
+
+$("#search").addEventListener("input", event => {
+  state.search = event.target.value;
+  renderCards();
+});
+
+$("#beginBtn").addEventListener("click", () => {
+  $("#explorer").scrollIntoView({behavior: prefersReducedMotion() ? "auto" : "smooth"});
+});
+
+$("#randomBtn").addEventListener("click", () => {
+  const m = missions[Math.floor(Math.random() * missions.length)];
+  openStory(m.id);
+});
+
+$("#textBtn").addEventListener("click", () => {
+  const large = document.body.classList.toggle("large-text");
+  $("#textBtn").setAttribute("aria-pressed", String(large));
+  savePrefs();
+  toast(large ? "Larger text enabled." : "Standard text size restored.");
+});
+
+$("#resetBtn").addEventListener("click", resetExpedition);
+
+$("#reviewBtn").addEventListener("click", () => {
+  const unanswered = missions.find(m => state.answers[m.id] === undefined);
+  const incorrect = missions.find(m => state.answers[m.id] !== undefined &&
+    state.answers[m.id] !== m.quiz.answer);
+
+  const target = unanswered || incorrect;
+
+  if (target) {
+    openStory(target.id);
+    toast(unanswered ? "Here is your next unanswered mission." : "Review this mission and try its question again.");
+  } else {
+    openStory(missions[0].id);
+    toast("All mission challenges are answered correctly. Explore the stories again!");
+  }
+});
+
+/* Progress bar */
+function updateProgress() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+  $("#progress").style.width = Math.min(100, Math.max(0, pct)) + "%";
+}
+
+window.addEventListener("scroll", updateProgress, {passive:true});
+window.addEventListener("resize", updateProgress);
+
+/* Starfield: subtle and disabled for reduced-motion preferences */
+(function initStars() {
+  const canvas = $("#stars");
+  const ctx = canvas.getContext("2d");
+
+  if (!ctx) return;
+
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let width = 0, height = 0, stars = [], raf = 0, visible = true;
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    width = rect.width;
+    height = rect.height;
+
+    canvas.width = Math.max(1, Math.floor(width * dpr));
+    canvas.height = Math.max(1, Math.floor(height * dpr));
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const count = Math.min(150, Math.floor(width * height / 6500));
+
+    stars = Array.from({length:count}, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 1.4 + .3,
+      a: Math.random() * .65 + .2,
+      phase: Math.random() * Math.PI * 2
+    }));
+
+    draw(0);
+  }
+
+  function draw(time) {
+    ctx.clearRect(0, 0, width, height);
+
+    for (const s of stars) {
+      const twinkle = reduceMotion ? 1 : .75 + .25 * Math.sin(time * .0008 + s.phase);
+
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(219,235,255,${s.a * twinkle})`;
+      ctx.fill();
+    }
+
+    if (!reduceMotion && visible) {
+      raf = requestAnimationFrame(draw);
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    cancelAnimationFrame(raf);
+    resize();
+  });
+
+  resize();
+
+  /* Pause the animation while the hero is off-screen to save battery and CPU */
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      cancelAnimationFrame(raf);
+      if (visible) raf = requestAnimationFrame(draw);
+    }).observe(canvas);
+  }
+})();
+
+/* Initialize saved state and render the experience */
+(function init() {
+  const savedAnswers = safeGet("echoes_answers_v1", {});
+  const savedAttempts = safeGet("echoes_attempts_v1", {});
+
+  state.answers = savedAnswers && typeof savedAnswers === "object" ? savedAnswers : {};
+  state.attempts = savedAttempts && typeof savedAttempts === "object" ? savedAttempts : {};
+
+  /* Discard answers that no longer match the current quiz definitions. */
+  for (const m of missions) {
+    const a = state.answers[m.id];
+
+    if (!Number.isInteger(a) || a < 0 || a >= m.quiz.options.length) {
+      delete state.answers[m.id];
+    }
+  }
+
+  renderDestinations();
+  renderCards();
+  renderTimeline(); 
+  renderAllStories();
+  renderScore();
+  updateProgress();
+
+  const prefs = safeGet("echoes_prefs_v1", {});
+  if (prefs && prefs.large) {
+    document.body.classList.add("large-text");
+    $("#textBtn").setAttribute("aria-pressed", "true");
+  }
+  if (prefs && ["kid", "mid", "pro"].includes(prefs.level)) setLevel(prefs.level, true);
+
+  $$("#levels button").forEach(button => {
+    button.setAttribute("aria-pressed", String(button.dataset.level === state.level));
+  });
+
+  $$(".destination").forEach(button => {
+    button.setAttribute("aria-pressed", "false");
+  });
+
+  if (!("speechSynthesis" in window)) {
+    $$(".read-story").forEach(button => {
+      button.title = "Speech synthesis is unavailable in this browser";
+    });
+  }
+})();
+</script>
+<script>
+/* Opening animation: "incoming signal" */
+(function () {
+  "use strict";
+  const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const IN = document.getElementById("intro");
+  if (!IN) return;
+  const tx = document.getElementById("introTx"), it = document.getElementById("introTitle"),
+        op = document.getElementById("introOpen"), cv = document.getElementById("introCanvas"),
+        cx = cv.getContext("2d"), ts = [];
+  const bg = [...document.body.children].filter(x => x !== IN);
+  let run = true, speed = 1.2, W = 0, H = 0;
+  const T = (f, ms) => ts.push(setTimeout(f, ms));
+  document.body.classList.add("intro-lock");
+  bg.forEach(x => { x.inert = true; });
+
+  function closeIntro() {
+    if (!run) return;
+    run = false; ts.forEach(clearTimeout);
+    window.removeEventListener("resize", size);
+    bg.forEach(x => { x.inert = false; });
+    IN.classList.add("out");
+    document.body.classList.remove("intro-lock");
+    setTimeout(() => IN.remove(), 700);
+    window.scrollTo(0, 0);
+  }
+  op.onclick = closeIntro;
+  document.getElementById("introSkip").onclick = closeIntro;
+  addEventListener("keydown", e => { if (e.key === "Escape") closeIntro(); });
+
+  function reveal() {
+    tx.classList.add("hid");
+    IN.classList.add("flash", "done");
+    it.classList.add("show");
+    T(() => { op.classList.add("show"); op.focus({ preventScroll: true }); }, 1300);
+  }
+  if (RM) { reveal(); return; }
+
+  function size() { W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  size(); window.addEventListener("resize", size);
+  const S = [];
+  for (let i = 0; i < 170; i++) S.push({ x: (Math.random() - .5) * innerWidth * 2, y: (Math.random() - .5) * innerHeight * 2, z: Math.random() * innerWidth });
+  const proj = (s, z) => [W / 2 + s.x / z * W * .5, H / 2 + s.y / z * W * .5];
+  function frame() {
+    if (!run) return;
+    cx.fillStyle = "rgba(6,10,24,.3)"; cx.fillRect(0, 0, W, H);
+    cx.strokeStyle = "#fff"; cx.lineCap = "round";
+    for (const s of S) {
+      const p0 = proj(s, s.z + speed * 1.6);
+      s.z -= speed;
+      if (s.z < 2) { s.x = (Math.random() - .5) * W * 2; s.y = (Math.random() - .5) * H * 2; s.z = W; continue; }
+      const p1 = proj(s, s.z);
+      cx.lineWidth = (1 - s.z / W) * 2.4 + .4;
+      cx.globalAlpha = Math.min(1, (1 - s.z / W) + .25);
+      cx.beginPath(); cx.moveTo(p0[0], p0[1]); cx.lineTo(p1[0], p1[1]); cx.stroke();
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+  function ramp(to, ms) {
+    const f = speed, t0 = performance.now();
+    (function st() {
+      if (!run) return;
+      const k = Math.min(1, (performance.now() - t0) / ms);
+      speed = f + (to - f) * k * k;
+      if (k < 1) requestAnimationFrame(st);
+    })();
+  }
+  const L = ["> SIGNAL DETECTED…", "> Source: the Moon · Mars · deep space", "> Message: “We are still here.”", "> Decoding the echoes…"];
+  let li = 0, ci = 0;
+  function type() {
+    if (!run) return;
+    const l = L[li]; ci++;
+    tx.innerHTML = L.slice(0, li).join("<br>") + (li ? "<br>" : "") + l.slice(0, ci) + "<i></i>";
+    if (ci >= l.length) { li++; ci = 0; if (li >= L.length) T(fin, 500); else T(type, 350); } else T(type, 20);
+  }
+  function fin() { ramp(46, 1100); T(() => { reveal(); ramp(2.5, 1800); }, 1150); }
+  T(type, 500);
+})();
+</script>
+<script>
+/* Perfect-score celebration: plays when a learner gets all quiz answers correct */
+(function () {
+  "use strict";
+  const total = missions.length;
+  const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const correctCount = () => missions.filter(m => state.answers[m.id] === m.quiz.answer).length;
+  const isPerfect = () => correctCount() === total;
+  let was = isPerfect();
+  let confettiOn = false;
+
+  /* "Celebrate again" button in the mission report, shown only with a perfect score */
+  const replay = document.createElement("button");
+  replay.className = "btn ghost hidden";
+  replay.id = "celebrateAgain";
+  replay.type = "button";
+  replay.textContent = "🎉 Celebrate again";
+  $("#report .hero-actions").appendChild(replay);
+  replay.addEventListener("click", () => celebrate());
+  const syncReplay = () => replay.classList.toggle("hidden", !isPerfect());
+  syncReplay();
+
+  function startConfetti(cv) {
+    const cx = cv.getContext("2d");
+    let W = cv.width = innerWidth, H = cv.height = innerHeight;
+    const colors = ["#ffab70", "#7dd3fc", "#70e1a1", "#f9d477", "#ff8b8b", "#c4b5fd"];
+    const P = [];
+    const burst = (x, y, n) => {
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * Math.PI * 2, s = 4 + Math.random() * 9;
+        P.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 7, w: 6 + Math.random() * 7, h: 9 + Math.random() * 9,
+                 r: Math.random() * 6, vr: (Math.random() - .5) * .4, c: colors[i % colors.length] });
+      }
+    };
+    burst(W * .2, H * .7, 70); burst(W * .8, H * .7, 70);
+    setTimeout(() => burst(W * .5, H * .4, 90), 600);
+    const rain = setInterval(() => {
+      if (!confettiOn) return clearInterval(rain);
+      for (let i = 0; i < 4; i++) P.push({ x: Math.random() * W, y: -12, vx: (Math.random() - .5) * 2, vy: 2 + Math.random() * 3,
+        w: 6 + Math.random() * 6, h: 9 + Math.random() * 8, r: Math.random() * 6, vr: (Math.random() - .5) * .3, c: colors[(Math.random() * colors.length) | 0] });
+    }, 90);
+    setTimeout(() => clearInterval(rain), 4500);
+    (function tick() {
+      if (!confettiOn) return;
+      cx.clearRect(0, 0, W, H);
+      for (let i = P.length - 1; i >= 0; i--) {
+        const p = P[i];
+        p.vy += .22; p.vx *= .992; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+        if (p.y > H + 30) { P.splice(i, 1); continue; }
+        cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c; cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); cx.restore();
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+
+  function celebrate() {
+    if (document.getElementById("celebrate")) return;
+    const opener = document.activeElement;
+    const ov = document.createElement("div");
+    ov.id = "celebrate";
+    ov.setAttribute("role", "dialog");
+    ov.setAttribute("aria-modal", "true");
+    ov.setAttribute("aria-labelledby", "celTitle");
+    ov.innerHTML = `
+      <canvas id="celebrateConfetti" aria-hidden="true"></canvas>
+      <span class="cel-rocket" aria-hidden="true">🚀</span>
+      <div class="cel-card">
+        <span class="cel-star" style="left:12%;top:16%;animation-delay:.2s" aria-hidden="true">✦</span>
+        <span class="cel-star" style="right:14%;top:24%;animation-delay:.9s" aria-hidden="true">✦</span>
+        <span class="cel-star" style="left:20%;bottom:30%;animation-delay:1.3s" aria-hidden="true">✦</span>
+        <div class="cel-trophy" aria-hidden="true">🏆</div>
+        <h2 id="celTitle">Mission complete!</h2>
+        <div class="cel-score">Perfect score: ${total}/${total}</div>
+        <p>You answered every challenge correctly. You now know the stories and the science behind NASA's forgotten machines. Congratulations, Space Explorer!</p>
+        <div class="cel-actions">
+          <button class="btn primary" id="celReport" type="button">See my mission report</button>
+          <button class="btn ghost" id="celClose" type="button">Keep exploring</button>
+        </div>
+      </div>`;
+    document.body.appendChild(ov);
+    document.body.classList.add("cel-lock");
+    const bg = [...document.body.children].filter(x => x !== ov);
+    bg.forEach(x => { x.inert = true; });
+    requestAnimationFrame(() => ov.classList.add("show"));
+    if (!RM) { confettiOn = true; startConfetti($("#celebrateConfetti")); }
+
+    function close(toReport) {
+      confettiOn = false;
+      document.removeEventListener("keydown", onKey);
+      bg.forEach(x => { x.inert = false; });
+      document.body.classList.remove("cel-lock");
+      ov.classList.remove("show");
+      setTimeout(() => ov.remove(), 400);
+      if (toReport) $("#report").scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "start" });
+      else if (opener && opener.isConnected && opener.focus) opener.focus({ preventScroll: true });
+    }
+    function onKey(e) { if (e.key === "Escape") close(false); }
+    document.addEventListener("keydown", onKey);
+    $("#celReport").onclick = () => close(true);
+    $("#celClose").onclick = () => close(false);
+    $("#celReport").focus({ preventScroll: true });
+  }
+
+  /* Celebrate the moment the last wrong answer becomes right (or all are answered correctly) */
+  const _renderScore = window.renderScore;
+  window.renderScore = function () {
+    _renderScore.apply(this, arguments);
+    const now = isPerfect();
+    if (now && !was) setTimeout(celebrate, 800);
+    was = now;
+    syncReplay();
+  };
+})();
+</script>
+</body>
+</html>
+  
